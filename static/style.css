@@ -1,0 +1,84 @@
+body, html {   
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display:table;
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+}
+img {
+    display:table-cell;
+    vertical-align:middle;
+}
+form {
+    display:table;/* shrinks to fit content */
+    margin:auto;
+}
+
+label {
+    display:table-cell;
+    vertical-align:middle;  
+}
+.upload-btn-wrapper {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.upload-sub-wrapper {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.btn {
+    display: inline-block;
+    border: 2px solid gray;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 8px 120px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.sub {
+    border: 2px solid gray;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.upload-sub-wrapper input[type=file] {
+    display: inline-block;
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.upload-btn-wrapper input[type=file] {
+    display: inline-block;
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+td{
+    font-family: RooneySans-Regular,Lucida Sans,Lucida Grande,Lucida Sans Unicode,Trebuchet MS,sans-serif;font-size: 20px;color: #000;font-weight: 500;
+}
+table {
+    border: 2px solid gray;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 8px 95px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}

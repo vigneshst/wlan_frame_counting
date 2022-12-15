@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='icon.png')}}">
+        <title>MAC</title>
+    </head>
+    <body >
+        <script language="JavaScript" type="text/javascript">
+            function loading(){
+                $("#loading").show();
+                $("#content").hide();
+                $("#content1").hide(); 
+                $("#content2").hide(); 
+                $("#content3").hide();       
+            }
+        </script>
+        <script type="text/javascript" src="{{url_for('static', filename='loading.js')}}"></script>
+
+        <link rel="stylesheet" href='/static/style.css'/>
+        
+        <form method = "POST" enctype = "multipart/form-data" >
+            <div id="content">
+                <label style="font-family: RooneySans-Regular,Lucida Sans,Lucida Grande,Lucida Sans Unicode,Trebuchet MS,sans-serif;font-size: 45px;color: #000;font-weight: 500;">MAC Frame Analaysis</label>
+                <div id="content" name="fileupdiv">
+                    <div class="upload-btn-wrapper">
+                        <button class="btn" >Upload a file</button>
+                        <input class="btn" type = "file" id ="fileup" name = "File" style="width: 365px;height: 43px;"><div style="display: inline;"><button class="sub" input type = "submit" value = "Submit" name="upload" onclick="loading();"> Submit </button></div>
+                        <h5 style="visibility: {{ v }} ">Please upload valid pcapng files.</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="loading" style="display:none;"><img class="img" src="{{url_for('static', filename='loading.gif')}}" alt=""></div>
+            <div id="content1" class="form-group result" style="visibility: {{ resultv }} " >
+                <div id="content2" class="col-sm-10" style="padding-top: 8px">
+                    <table id="content3" class="table">
+                        <tbody>
+                            {% for i in outputs %}
+                                <tr>
+                                    <td style="font-family: RooneySans-Regular,Lucida Sans,Lucida Grande,Lucida Sans Unicode,Trebuchet MS,sans-serif;font-size: 20px;color: #000;font-weight: 500;" name="noframeresult">{{ i.split(':')[0] }}</td>
+                                    {% if (i.split(':')[1])  %}
+                                        <td>:</td>
+                                        <td style="font-family: RooneySans-Regular,Lucida Sans,Lucida Grande,Lucida Sans Unicode,Trebuchet MS,sans-serif;font-size: 20px;color: #000;font-weight: 500;" name="{{ (i.split(':')[0]).replace(' ','') }}result">{{ i.split(':')[1] }}</td>
+                                    {% endif %} 
+                                </tr>  
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+        
+    </body>
+</html>
